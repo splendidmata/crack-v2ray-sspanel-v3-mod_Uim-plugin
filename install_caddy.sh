@@ -23,11 +23,8 @@ _download_caddy_file() {
 	# tar zxf $caddy_tmp_file -C $caddy_tmp
 	# cp -f ${caddy_tmp}caddy /usr/local/bin/
 
-	wget -qO- https://getcaddy.com | bash -s personal
+	bash <(curl -L -s  https://raw.githubusercontent.com/splendidwrx/doubi/master/caddy_install.sh)
 
-	if [[ ! -f /usr/local/bin/caddy ]]; then
-		echo -e "$red 安装 Caddy 出错！$none" && exit 1
-	fi
 }
 _install_caddy_service() {
 	# setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/caddy
@@ -91,7 +88,7 @@ _install_caddy_service() {
 main(){
     _download_caddy_file
     _install_caddy_service
-    cat >/etc/caddy/Caddyfile <<-EOF
+    cat >/usr/local/caddy/Caddyfile <<-EOF
 ${domain} {
     tls ${email}
     gzip

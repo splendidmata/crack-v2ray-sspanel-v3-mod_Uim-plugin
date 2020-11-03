@@ -14,7 +14,7 @@ bash <(curl -L -s  https://raw.githubusercontent.com/splendidwrx/crack-v2ray-ssp
 ```
 ### 后端安装（简单带caddy版）
 ``` bash
-bash <(curl -L -s  hhttps://github.com/splendidwrx/crack-v2ray-sspanel-v3-mod_Uim-plugin/blob/master/instal_release_caddy_easy.sh)
+bash <(curl -L -s  https://raw.githubusercontent.com/splendidwrx/crack-v2ray-sspanel-v3-mod_Uim-plugin/master/instal_release_caddy_easy.sh)
 ```
 ### caddy安装（已修复，可用性1000%）
 ``` bash
